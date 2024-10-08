@@ -1,9 +1,9 @@
 import axios from "axios";
+import Constants from "expo-constants";
 
-const API_KEY = "AIzaSyCD5COFj6MzNbihm_t8qyjeC7OQneEdF38";
+const API_KEY = Constants.expoConfig.extra.firebaseApiKey;
+
 const BASE_AUTH_URL = "https://identitytoolkit.googleapis.com/v1/accounts:";
-const SIGNUP_LINK = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`;
-const SIGNIN_LINK = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
 
 async function authentication(mode, email, password) {
   const URL = `${BASE_AUTH_URL}${mode}?key=${API_KEY}`;
